@@ -1,0 +1,31 @@
+name: Verify Call Coach
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build, migrate, test browsers/API/MCP, replace containers, restore backup
+        run: ./scripts/test-compose.sh
+      - name: Upload browser reports and failure traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14
+  helm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-helm@v4.3.0
+        with:
+          version: v4.3.1
+      - run: helm lint deploy/helm/call-coach
+      - run: helm template verify deploy/helm/call-coach > /tmp/call-coach.yaml
+      - run: helm template external deploy/helm/call-coach --set postgresql.enabled=false --set ingress.enabled=true > /tmp/call-coach-external.yaml

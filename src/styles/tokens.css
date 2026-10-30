@@ -1,0 +1,37 @@
+:root {
+  color-scheme: light;
+  --font-size-conversation: 1.375rem;
+  --font-body:
+    "Manrope Variable", "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --color-page: #fefefe;
+  --color-surface: #fefefe;
+  --color-raised: #e6e6ec;
+  --color-notes: #f3f3f7;
+  --color-canvas: #e6e6ec;
+  --color-graphic: #004dce;
+  --color-ink: #120e20;
+  --color-muted: #69647c;
+  --color-placeholder: #69647c;
+  --color-disabled: #777284;
+  --color-line: #d5d3dd;
+  --color-control-line: #7b758b;
+  --color-accent: #004dce;
+  --color-accent-hover: #003da4;
+  --color-on-accent: #fefefe;
+  --color-green: #4ef992;
+  --color-on-green: #120e20;
+  --color-selected: #eaf0ff;
+  --color-success: #17683b;
+  --color-success-bg: #e4f8ec;
+  --color-warning: #795610;
+  --color-warning-bg: #fcf3de;
+  --color-error: #a62d35;
+  --color-error-bg: #fceef0;
+  --color-danger-line: #bc737a;
+  --color-skeleton: #d5d3dd;
+  --radius-control: 12px;
+  --radius-panel: 40px;
+  --radius-action: 20px;
+  --shadow-dialog: 0 20px 64px rgb(18 14 32 / 0.16);
+  --duration-state: 200ms;
+}

@@ -1,0 +1,29 @@
+# Application design consistency
+
+Checked 29 October 2026 as an ordinary extension of the user-approved light Atuin component system. **The inspected application remains consistent with that visual world; no approved-system change is required.** `DESIGN.md` and `.impeccable/design.json` were preserved.
+
+## Evidence and additions
+
+- **Palette and type:** `src/styles/tokens.css` retains the approved paper, ink, cobalt, green, mist, semantic colors, Manrope stack, radii, shadow, and state duration. The application styles introduce no replacement token set. Page titles reuse outlined words (`src/components/app/shell.tsx:73`); login uses the same device (`src/components/app/login.tsx:24`).
+- **Connected application surfaces:** Scripts and Runs extend the existing fields, buttons, badges, tables, loading/empty states, and modal patterns (`src/components/app/scripts.tsx:41`, `src/components/app/history.tsx:9`). The navigation shell uses paper, selected-blue navigation, and the existing wordmark (`src/components/app/shell.tsx:5`; `src/app/globals.css:1849`). Production script tables explicitly disable sample labeling; this is appropriate to connected records rather than visual drift.
+- **Full-screen authoring:** The cobalt canvas retains white editor nodes, green selection/perimeter focus, blue child Edit focus, and contrasting green handles. Pan/zoom controls, edges, selected-node actions, validation navigation, and node content clipping are functional additions (`src/components/app/workflow-editor.tsx:36`, `:361`, `:538`; `src/app/globals.css:1893`). Edge colors repeat the approved paper/ink values; they do not add a palette. These canvas behaviors are not new global card or typography rules.
+- **Calling and review:** Live calls reuse `CallWorkspace` and `ConversationCard`, preserving the two-column desktop relationship, 22px/20px reading, open leading, independent notes, and full-screen mobile notes. Completed calls extend those components with read-only notes/choices and a Closed badge (`src/components/app/run.tsx:20`, `:78`; `src/components/conversation.tsx:19`, `:80`). Evaluation reuses the outcome picker, fields, and primary action.
+- **Truthful status:** Sync/recovery/conflict interfaces retain text alongside existing status colors and offer explicit actions (`src/components/app/sync-status.tsx:3`). The draft hook distinguishes unsaved, saving, acknowledged, failed, and conflicting work; it schedules dirty script saves every five seconds and run edits after one second (`src/lib/use-draft.ts:118`, `:239`, `:290`). This describes the inspected implementation, not an independent persistence acceptance result.
+- **Documentation:** Protected-download links, definitions, code samples, and section navigation extend the approved text-led treatment. Local monospace code and stronger definition terms serve technical content (`src/components/app/documentation.tsx:2`; `src/app/globals.css:1923`).
+
+## Local adaptations and retained drift
+
+The application uses its own 80px header, 128px phone header, full-viewport editor, and responsive toolbar rather than reproducing the gallery shell. Local login/evaluation/test heading sizes include 40px, 36px, 32px, and 24px; these remain regular-weight contextual overrides, not replacements for the approved heading tokens. Application responsive rules use the existing 899px/599px boundaries, with a 600–899px navigation adjustment (`src/app/globals.css:1866`, `:1871`, `:1933`). No material visual drift was found in the inspected source or final desktop/mobile captures.
+
+The approved system files still contain library-stage prose saying full implementation awaits feedback and interactions are page-local (`DESIGN.md:232`, its closing scope note, and sidecar narrative). That historical scope text is now stale after explicit approval; it is not a current limitation of the application or a reason to replace the visual system. The unused canvas/graphic declarations and the Manrope-for-Px-Grotesk substitution remain as previously recorded. None was silently repaired or promoted into a new rule.
+
+## Capture scope
+
+Visually checked all 22 final `application-*-desktop.png` / `application-*-mobile.png` captures in `.impeccable/review/application/`: scripts, editor, node editor, test, lead, call, evaluation, completed review, history, login, and documentation. Together with the previously inspected `user-1280-scripts.png` and `user-1280-editor.png`, the check covers all 24 required captures.
+
+- Scripts/history retain regular outlined titles, quiet table boundaries, readable state text, and responsive navigation. The captured mobile history uses its intended scrollable table region rather than shrinking its columns into unreadable text.
+- Editor captures show the cobalt field, white nodes and edges, green selected perimeter and handles, and visible selected-node actions. The mobile toolbar uses its intended horizontal action strip; the node-edit dialog keeps paper fields and ordinary blue field focus against the dimmed canvas.
+- Call and completed-review captures preserve spacious reading and independent desktop notes. Mobile stacks reading, retains the notes action, and distinguishes active End call controls from Closed/read-only review. Full-screen notes behavior remains evidenced by the shared component source, rather than an unshown open-notes capture.
+- Login, lead, and evaluation keep regular heading capsules, persistent labels, paper fields, and cobalt outlined actions. Documentation preserves the same heading device, text-led hierarchy, wrapping section links, and mist code region across both widths.
+
+The final captures corroborate the independent finish review's **ship** disposition with no material visual fixes. This was a documentation-only consistency check: no source edits, test runs, or changes to `DESIGN.md` or its sidecar were performed.

@@ -1,0 +1,602 @@
+[
+  {
+    "name": "TT groups and terminal talking point",
+    "definition": {
+      "schemaVersion": 1,
+      "nodes": [
+        {
+          "id": "a",
+          "type": "talking_point",
+          "isStart": true,
+          "text": "a",
+          "next": "b"
+        },
+        {
+          "id": "b",
+          "type": "talking_point",
+          "isStart": false,
+          "text": "b",
+          "next": "c"
+        },
+        {
+          "id": "c",
+          "type": "talking_point",
+          "isStart": false,
+          "text": "c",
+          "next": null
+        }
+      ]
+    },
+    "steps": [
+      {
+        "action": "initial",
+        "expected": {
+          "groups": [
+            {
+              "firstNodeId": "a",
+              "secondNodeId": "b"
+            }
+          ],
+          "activeGroupIndex": 0,
+          "choices": {},
+          "retainedNodeIds": [
+            "a",
+            "b"
+          ]
+        }
+      },
+      {
+        "action": "next",
+        "expected": {
+          "groups": [
+            {
+              "firstNodeId": "a",
+              "secondNodeId": "b"
+            },
+            {
+              "firstNodeId": "c"
+            }
+          ],
+          "activeGroupIndex": 1,
+          "choices": {},
+          "retainedNodeIds": [
+            "a",
+            "b",
+            "c"
+          ]
+        }
+      },
+      {
+        "action": "back",
+        "expected": {
+          "groups": [
+            {
+              "firstNodeId": "a",
+              "secondNodeId": "b"
+            },
+            {
+              "firstNodeId": "c"
+            }
+          ],
+          "activeGroupIndex": 0,
+          "choices": {},
+          "retainedNodeIds": [
+            "a",
+            "b",
+            "c"
+          ]
+        }
+      },
+      {
+        "action": "next",
+        "expected": {
+          "groups": [
+            {
+              "firstNodeId": "a",
+              "secondNodeId": "b"
+            },
+            {
+              "firstNodeId": "c"
+            }
+          ],
+          "activeGroupIndex": 1,
+          "choices": {},
+          "retainedNodeIds": [
+            "a",
+            "b",
+            "c"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "second switch, retained forward path, correction after merge",
+    "definition": {
+      "schemaVersion": 1,
+      "nodes": [
+        {
+          "id": "a",
+          "type": "talking_point",
+          "isStart": true,
+          "text": "a",
+          "next": "s"
+        },
+        {
+          "id": "s",
+          "type": "switch",
+          "isStart": false,
+          "name": "Choose",
+          "options": [
+            {
+              "id": "yes",
+              "label": "Yes",
+              "target": "yes-path"
+            },
+            {
+              "id": "no",
+              "label": "No",
+              "target": "no-path"
+            }
+          ]
+        },
+        {
+          "id": "yes-path",
+          "type": "talking_point",
+          "isStart": false,
+          "text": "yes-path",
+          "next": "merge"
+        },
+        {
+          "id": "no-path",
+          "type": "talking_point",
+          "isStart": false,
+          "text": "no-path",
+          "next": "merge"
+        },
+        {
+          "id": "merge",
+          "type": "talking_point",
+          "isStart": false,
+          "text": "merge",
+          "next": "end"
+        },
+        {
+          "id": "end",
+          "type": "talking_point",
+          "isStart": false,
+          "text": "end",
+          "next": null
+        }
+      ]
+    },
+    "steps": [
+      {
+        "action": "initial",
+        "expected": {
+          "groups": [
+            {
+              "firstNodeId": "a",
+              "secondNodeId": "s"
+            }
+          ],
+          "activeGroupIndex": 0,
+          "choices": {},
+          "retainedNodeIds": [
+            "a",
+            "s"
+          ]
+        }
+      },
+      {
+        "action": "choose",
+        "nodeId": "s",
+        "optionId": "yes",
+        "expected": {
+          "groups": [
+            {
+              "firstNodeId": "a",
+              "secondNodeId": "s"
+            },
+            {
+              "firstNodeId": "yes-path",
+              "secondNodeId": "merge"
+            }
+          ],
+          "activeGroupIndex": 1,
+          "choices": {
+            "s": "yes"
+          },
+          "retainedNodeIds": [
+            "a",
+            "s",
+            "yes-path",
+            "merge"
+          ]
+        }
+      },
+      {
+        "action": "next",
+        "expected": {
+          "groups": [
+            {
+              "firstNodeId": "a",
+              "secondNodeId": "s"
+            },
+            {
+              "firstNodeId": "yes-path",
+              "secondNodeId": "merge"
+            },
+            {
+              "firstNodeId": "end"
+            }
+          ],
+          "activeGroupIndex": 2,
+          "choices": {
+            "s": "yes"
+          },
+          "retainedNodeIds": [
+            "a",
+            "s",
+            "yes-path",
+            "merge",
+            "end"
+          ]
+        }
+      },
+      {
+        "action": "back",
+        "expected": {
+          "groups": [
+            {
+              "firstNodeId": "a",
+              "secondNodeId": "s"
+            },
+            {
+              "firstNodeId": "yes-path",
+              "secondNodeId": "merge"
+            },
+            {
+              "firstNodeId": "end"
+            }
+          ],
+          "activeGroupIndex": 1,
+          "choices": {
+            "s": "yes"
+          },
+          "retainedNodeIds": [
+            "a",
+            "s",
+            "yes-path",
+            "merge",
+            "end"
+          ]
+        }
+      },
+      {
+        "action": "back",
+        "expected": {
+          "groups": [
+            {
+              "firstNodeId": "a",
+              "secondNodeId": "s"
+            },
+            {
+              "firstNodeId": "yes-path",
+              "secondNodeId": "merge"
+            },
+            {
+              "firstNodeId": "end"
+            }
+          ],
+          "activeGroupIndex": 0,
+          "choices": {
+            "s": "yes"
+          },
+          "retainedNodeIds": [
+            "a",
+            "s",
+            "yes-path",
+            "merge",
+            "end"
+          ]
+        }
+      },
+      {
+        "action": "choose",
+        "nodeId": "s",
+        "optionId": "yes",
+        "expected": {
+          "groups": [
+            {
+              "firstNodeId": "a",
+              "secondNodeId": "s"
+            },
+            {
+              "firstNodeId": "yes-path",
+              "secondNodeId": "merge"
+            },
+            {
+              "firstNodeId": "end"
+            }
+          ],
+          "activeGroupIndex": 1,
+          "choices": {
+            "s": "yes"
+          },
+          "retainedNodeIds": [
+            "a",
+            "s",
+            "yes-path",
+            "merge",
+            "end"
+          ]
+        }
+      },
+      {
+        "action": "back",
+        "expected": {
+          "groups": [
+            {
+              "firstNodeId": "a",
+              "secondNodeId": "s"
+            },
+            {
+              "firstNodeId": "yes-path",
+              "secondNodeId": "merge"
+            },
+            {
+              "firstNodeId": "end"
+            }
+          ],
+          "activeGroupIndex": 0,
+          "choices": {
+            "s": "yes"
+          },
+          "retainedNodeIds": [
+            "a",
+            "s",
+            "yes-path",
+            "merge",
+            "end"
+          ]
+        }
+      },
+      {
+        "action": "choose",
+        "nodeId": "s",
+        "optionId": "no",
+        "expected": {
+          "groups": [
+            {
+              "firstNodeId": "a",
+              "secondNodeId": "s"
+            },
+            {
+              "firstNodeId": "no-path",
+              "secondNodeId": "merge"
+            }
+          ],
+          "activeGroupIndex": 1,
+          "choices": {
+            "s": "no"
+          },
+          "retainedNodeIds": [
+            "a",
+            "s",
+            "no-path",
+            "merge"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "first switch reveals and later choice is discarded on correction",
+    "definition": {
+      "schemaVersion": 1,
+      "nodes": [
+        {
+          "id": "s",
+          "type": "switch",
+          "isStart": true,
+          "name": "Choose",
+          "options": [
+            {
+              "id": "yes",
+              "label": "Yes",
+              "target": "a"
+            },
+            {
+              "id": "no",
+              "label": "No",
+              "target": "b"
+            }
+          ]
+        },
+        {
+          "id": "a",
+          "type": "talking_point",
+          "isStart": false,
+          "text": "a",
+          "next": "later"
+        },
+        {
+          "id": "b",
+          "type": "talking_point",
+          "isStart": false,
+          "text": "b",
+          "next": "later"
+        },
+        {
+          "id": "later",
+          "type": "switch",
+          "isStart": false,
+          "name": "Choose",
+          "options": [
+            {
+              "id": "yes",
+              "label": "Yes",
+              "target": "x"
+            },
+            {
+              "id": "no",
+              "label": "No",
+              "target": "y"
+            }
+          ]
+        },
+        {
+          "id": "x",
+          "type": "talking_point",
+          "isStart": false,
+          "text": "x",
+          "next": null
+        },
+        {
+          "id": "y",
+          "type": "talking_point",
+          "isStart": false,
+          "text": "y",
+          "next": null
+        }
+      ]
+    },
+    "steps": [
+      {
+        "action": "initial",
+        "expected": {
+          "groups": [
+            {
+              "firstNodeId": "s"
+            }
+          ],
+          "activeGroupIndex": 0,
+          "choices": {},
+          "retainedNodeIds": [
+            "s"
+          ]
+        }
+      },
+      {
+        "action": "choose",
+        "nodeId": "s",
+        "optionId": "yes",
+        "expected": {
+          "groups": [
+            {
+              "firstNodeId": "s",
+              "secondNodeId": "a"
+            }
+          ],
+          "activeGroupIndex": 0,
+          "choices": {
+            "s": "yes"
+          },
+          "retainedNodeIds": [
+            "s",
+            "a"
+          ]
+        }
+      },
+      {
+        "action": "next",
+        "expected": {
+          "groups": [
+            {
+              "firstNodeId": "s",
+              "secondNodeId": "a"
+            },
+            {
+              "firstNodeId": "later"
+            }
+          ],
+          "activeGroupIndex": 1,
+          "choices": {
+            "s": "yes"
+          },
+          "retainedNodeIds": [
+            "s",
+            "a",
+            "later"
+          ]
+        }
+      },
+      {
+        "action": "choose",
+        "nodeId": "later",
+        "optionId": "yes",
+        "expected": {
+          "groups": [
+            {
+              "firstNodeId": "s",
+              "secondNodeId": "a"
+            },
+            {
+              "firstNodeId": "later",
+              "secondNodeId": "x"
+            }
+          ],
+          "activeGroupIndex": 1,
+          "choices": {
+            "s": "yes",
+            "later": "yes"
+          },
+          "retainedNodeIds": [
+            "s",
+            "a",
+            "later",
+            "x"
+          ]
+        }
+      },
+      {
+        "action": "back",
+        "expected": {
+          "groups": [
+            {
+              "firstNodeId": "s",
+              "secondNodeId": "a"
+            },
+            {
+              "firstNodeId": "later",
+              "secondNodeId": "x"
+            }
+          ],
+          "activeGroupIndex": 0,
+          "choices": {
+            "s": "yes",
+            "later": "yes"
+          },
+          "retainedNodeIds": [
+            "s",
+            "a",
+            "later",
+            "x"
+          ]
+        }
+      },
+      {
+        "action": "choose",
+        "nodeId": "s",
+        "optionId": "no",
+        "expected": {
+          "groups": [
+            {
+              "firstNodeId": "s",
+              "secondNodeId": "b"
+            }
+          ],
+          "activeGroupIndex": 0,
+          "choices": {
+            "s": "no"
+          },
+          "retainedNodeIds": [
+            "s",
+            "b"
+          ]
+        }
+      }
+    ]
+  }
+]

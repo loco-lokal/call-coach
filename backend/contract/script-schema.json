@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://call-coach.local/script.schema.json",
+  "title": "Call Coach script definition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "nodes"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "nodes": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "type",
+              "isStart",
+              "text",
+              "next"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/id"
+              },
+              "type": {
+                "const": "talking_point"
+              },
+              "isStart": {
+                "type": "boolean"
+              },
+              "text": {
+                "type": "string",
+                "maxLength": 20000
+              },
+              "next": {
+                "$ref": "#/$defs/target"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "type",
+              "isStart",
+              "name",
+              "options"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/id"
+              },
+              "type": {
+                "const": "switch"
+              },
+              "isStart": {
+                "type": "boolean"
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 2000
+              },
+              "options": {
+                "type": "array",
+                "maxItems": 50,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "label",
+                    "target"
+                  ],
+                  "properties": {
+                    "id": {
+                      "$ref": "#/$defs/id"
+                    },
+                    "label": {
+                      "type": "string",
+                      "maxLength": 2000
+                    },
+                    "target": {
+                      "$ref": "#/$defs/target"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "positions": {
+          "type": "object",
+          "maxProperties": 500,
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "x",
+              "y"
+            ],
+            "properties": {
+              "x": {
+                "type": "number",
+                "minimum": -1000000,
+                "maximum": 1000000
+              },
+              "y": {
+                "type": "number",
+                "minimum": -1000000,
+                "maximum": 1000000
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "\\S"
+    },
+    "target": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 128
+    }
+  },
+  "description": "schemaVersion 1. Save graph-invalid drafts with structured errors. Normal calls require exactly one start, all nodes reachable, unique node/option IDs, nonblank text/names/labels, at least two connected switch options, existing targets, no cycles, and no consecutive switches. Text nodes may be terminal and branches may merge. Full replacements remove omitted elements. Layout is optional."
+}

@@ -1,0 +1,606 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-29T16:04:34.194259+00:00",
+  "title": "Design System: Call Coach",
+  "extensions": {
+    "colorMeta": {
+      "page": {
+        "role": "neutral",
+        "displayName": "Page",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "raised": {
+        "role": "neutral",
+        "displayName": "Raised",
+        "tonalRamp": [
+          "oklch(15.00% 0.00242 286.24)",
+          "oklch(26.43% 0.00524 286.24)",
+          "oklch(37.86% 0.00725 286.24)",
+          "oklch(49.29% 0.00806 286.24)",
+          "oklch(60.71% 0.00806 286.24)",
+          "oklch(72.14% 0.00685 286.24)",
+          "oklch(83.57% 0.00443 286.24)",
+          "oklch(95.00% 0.00121 286.24)"
+        ]
+      },
+      "notes": {
+        "role": "neutral",
+        "displayName": "Notes",
+        "tonalRamp": [
+          "oklch(15.00% 0.00159 286.30)",
+          "oklch(26.43% 0.00345 286.30)",
+          "oklch(37.86% 0.00478 286.30)",
+          "oklch(49.29% 0.00531 286.30)",
+          "oklch(60.71% 0.00531 286.30)",
+          "oklch(72.14% 0.00452 286.30)",
+          "oklch(83.57% 0.00292 286.30)",
+          "oklch(95.00% 0.00080 286.30)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.01095 292.54)",
+          "oklch(26.43% 0.02373 292.54)",
+          "oklch(37.86% 0.03286 292.54)",
+          "oklch(49.29% 0.03651 292.54)",
+          "oklch(60.71% 0.03651 292.54)",
+          "oklch(72.14% 0.03103 292.54)",
+          "oklch(83.57% 0.02008 292.54)",
+          "oklch(95.00% 0.00548 292.54)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15.00% 0.01137 294.59)",
+          "oklch(26.43% 0.02463 294.59)",
+          "oklch(37.86% 0.03410 294.59)",
+          "oklch(49.29% 0.03789 294.59)",
+          "oklch(60.71% 0.03789 294.59)",
+          "oklch(72.14% 0.03220 294.59)",
+          "oklch(83.57% 0.02084 294.59)",
+          "oklch(95.00% 0.00568 294.59)"
+        ]
+      },
+      "placeholder": {
+        "role": "neutral",
+        "displayName": "Placeholder",
+        "tonalRamp": [
+          "oklch(15.00% 0.01137 294.59)",
+          "oklch(26.43% 0.02463 294.59)",
+          "oklch(37.86% 0.03410 294.59)",
+          "oklch(49.29% 0.03789 294.59)",
+          "oklch(60.71% 0.03789 294.59)",
+          "oklch(72.14% 0.03220 294.59)",
+          "oklch(83.57% 0.02084 294.59)",
+          "oklch(95.00% 0.00568 294.59)"
+        ]
+      },
+      "disabled": {
+        "role": "neutral",
+        "displayName": "Disabled",
+        "tonalRamp": [
+          "oklch(15.00% 0.00841 298.19)",
+          "oklch(26.43% 0.01822 298.19)",
+          "oklch(37.86% 0.02523 298.19)",
+          "oklch(49.29% 0.02803 298.19)",
+          "oklch(60.71% 0.02803 298.19)",
+          "oklch(72.14% 0.02383 298.19)",
+          "oklch(83.57% 0.01542 298.19)",
+          "oklch(95.00% 0.00420 298.19)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(15.00% 0.00414 295.29)",
+          "oklch(26.43% 0.00896 295.29)",
+          "oklch(37.86% 0.01241 295.29)",
+          "oklch(49.29% 0.01379 295.29)",
+          "oklch(60.71% 0.01379 295.29)",
+          "oklch(72.14% 0.01172 295.29)",
+          "oklch(83.57% 0.00758 295.29)",
+          "oklch(95.00% 0.00207 295.29)"
+        ]
+      },
+      "control-line": {
+        "role": "neutral",
+        "displayName": "Control Line",
+        "tonalRamp": [
+          "oklch(15.00% 0.01022 297.80)",
+          "oklch(26.43% 0.02213 297.80)",
+          "oklch(37.86% 0.03065 297.80)",
+          "oklch(49.29% 0.03405 297.80)",
+          "oklch(60.71% 0.03405 297.80)",
+          "oklch(72.14% 0.02894 297.80)",
+          "oklch(83.57% 0.01873 297.80)",
+          "oklch(95.00% 0.00511 297.80)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Accent",
+        "tonalRamp": [
+          "oklch(15.00% 0.06288 261.41)",
+          "oklch(26.43% 0.13623 261.41)",
+          "oklch(37.86% 0.18863 261.41)",
+          "oklch(49.29% 0.20959 261.41)",
+          "oklch(60.71% 0.20959 261.41)",
+          "oklch(72.14% 0.17815 261.41)",
+          "oklch(83.57% 0.11527 261.41)",
+          "oklch(95.00% 0.03144 261.41)"
+        ]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Accent Hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.05257 261.16)",
+          "oklch(26.43% 0.11390 261.16)",
+          "oklch(37.86% 0.15771 261.16)",
+          "oklch(49.29% 0.17523 261.16)",
+          "oklch(60.71% 0.17523 261.16)",
+          "oklch(72.14% 0.14895 261.16)",
+          "oklch(83.57% 0.09638 261.16)",
+          "oklch(95.00% 0.02629 261.16)"
+        ]
+      },
+      "on-accent": {
+        "role": "primary",
+        "displayName": "On Accent",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "green": {
+        "role": "secondary",
+        "displayName": "Green",
+        "tonalRamp": [
+          "oklch(15.00% 0.05972 152.55)",
+          "oklch(26.43% 0.12940 152.55)",
+          "oklch(37.86% 0.17917 152.55)",
+          "oklch(49.29% 0.19908 152.55)",
+          "oklch(60.71% 0.19908 152.55)",
+          "oklch(72.14% 0.16921 152.55)",
+          "oklch(83.57% 0.10949 152.55)",
+          "oklch(95.00% 0.02986 152.55)"
+        ]
+      },
+      "on-green": {
+        "role": "secondary",
+        "displayName": "On Green",
+        "tonalRamp": [
+          "oklch(15.00% 0.01095 292.54)",
+          "oklch(26.43% 0.02373 292.54)",
+          "oklch(37.86% 0.03286 292.54)",
+          "oklch(49.29% 0.03651 292.54)",
+          "oklch(60.71% 0.03651 292.54)",
+          "oklch(72.14% 0.03103 292.54)",
+          "oklch(83.57% 0.02008 292.54)",
+          "oklch(95.00% 0.00548 292.54)"
+        ]
+      },
+      "selected": {
+        "role": "primary",
+        "displayName": "Selected",
+        "tonalRamp": [
+          "oklch(15.00% 0.00635 268.43)",
+          "oklch(26.43% 0.01376 268.43)",
+          "oklch(37.86% 0.01905 268.43)",
+          "oklch(49.29% 0.02117 268.43)",
+          "oklch(60.71% 0.02117 268.43)",
+          "oklch(72.14% 0.01800 268.43)",
+          "oklch(83.57% 0.01164 268.43)",
+          "oklch(95.00% 0.00318 268.43)"
+        ]
+      },
+      "success": {
+        "role": "semantic",
+        "displayName": "Success",
+        "tonalRamp": [
+          "oklch(15.00% 0.03155 153.79)",
+          "oklch(26.43% 0.06836 153.79)",
+          "oklch(37.86% 0.09465 153.79)",
+          "oklch(49.29% 0.10517 153.79)",
+          "oklch(60.71% 0.10517 153.79)",
+          "oklch(72.14% 0.08939 153.79)",
+          "oklch(83.57% 0.05784 153.79)",
+          "oklch(95.00% 0.01577 153.79)"
+        ]
+      },
+      "success-bg": {
+        "role": "semantic",
+        "displayName": "Success Bg",
+        "tonalRamp": [
+          "oklch(15.00% 0.00790 159.59)",
+          "oklch(26.43% 0.01711 159.59)",
+          "oklch(37.86% 0.02369 159.59)",
+          "oklch(49.29% 0.02632 159.59)",
+          "oklch(60.71% 0.02632 159.59)",
+          "oklch(72.14% 0.02237 159.59)",
+          "oklch(83.57% 0.01448 159.59)",
+          "oklch(95.00% 0.00395 159.59)"
+        ]
+      },
+      "warning": {
+        "role": "semantic",
+        "displayName": "Warning",
+        "tonalRamp": [
+          "oklch(15.00% 0.02786 79.02)",
+          "oklch(26.43% 0.06037 79.02)",
+          "oklch(37.86% 0.08359 79.02)",
+          "oklch(49.29% 0.09288 79.02)",
+          "oklch(60.71% 0.09288 79.02)",
+          "oklch(72.14% 0.07895 79.02)",
+          "oklch(83.57% 0.05108 79.02)",
+          "oklch(95.00% 0.01393 79.02)"
+        ]
+      },
+      "warning-bg": {
+        "role": "semantic",
+        "displayName": "Warning Bg",
+        "tonalRamp": [
+          "oklch(15.00% 0.00877 87.54)",
+          "oklch(26.43% 0.01901 87.54)",
+          "oklch(37.86% 0.02632 87.54)",
+          "oklch(49.29% 0.02924 87.54)",
+          "oklch(60.71% 0.02924 87.54)",
+          "oklch(72.14% 0.02486 87.54)",
+          "oklch(83.57% 0.01608 87.54)",
+          "oklch(95.00% 0.00439 87.54)"
+        ]
+      },
+      "error": {
+        "role": "semantic",
+        "displayName": "Error",
+        "tonalRamp": [
+          "oklch(15.00% 0.04703 21.77)",
+          "oklch(26.43% 0.10190 21.77)",
+          "oklch(37.86% 0.14109 21.77)",
+          "oklch(49.29% 0.15677 21.77)",
+          "oklch(60.71% 0.15677 21.77)",
+          "oklch(72.14% 0.13325 21.77)",
+          "oklch(83.57% 0.08622 21.77)",
+          "oklch(95.00% 0.02351 21.77)"
+        ]
+      },
+      "error-bg": {
+        "role": "semantic",
+        "displayName": "Error Bg",
+        "tonalRamp": [
+          "oklch(15.00% 0.00461 7.49)",
+          "oklch(26.43% 0.00998 7.49)",
+          "oklch(37.86% 0.01382 7.49)",
+          "oklch(49.29% 0.01535 7.49)",
+          "oklch(60.71% 0.01535 7.49)",
+          "oklch(72.14% 0.01305 7.49)",
+          "oklch(83.57% 0.00844 7.49)",
+          "oklch(95.00% 0.00230 7.49)"
+        ]
+      },
+      "danger-line": {
+        "role": "semantic",
+        "displayName": "Danger Line",
+        "tonalRamp": [
+          "oklch(15.00% 0.02773 13.82)",
+          "oklch(26.43% 0.06009 13.82)",
+          "oklch(37.86% 0.08320 13.82)",
+          "oklch(49.29% 0.09245 13.82)",
+          "oklch(60.71% 0.09245 13.82)",
+          "oklch(72.14% 0.07858 13.82)",
+          "oklch(83.57% 0.05085 13.82)",
+          "oklch(95.00% 0.01387 13.82)"
+        ]
+      },
+      "skeleton": {
+        "role": "neutral",
+        "displayName": "Skeleton",
+        "tonalRamp": [
+          "oklch(15.00% 0.00414 295.29)",
+          "oklch(26.43% 0.00896 295.29)",
+          "oklch(37.86% 0.01241 295.29)",
+          "oklch(49.29% 0.01379 295.29)",
+          "oklch(60.71% 0.01379 295.29)",
+          "oklch(72.14% 0.01172 295.29)",
+          "oklch(83.57% 0.00758 295.29)",
+          "oklch(95.00% 0.00207 295.29)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Regular main heading."
+      },
+      "headline-narrow": {
+        "displayName": "Headline Narrow",
+        "purpose": "Main heading at maximum width 599px."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Observed title role."
+      },
+      "title-narrow": {
+        "displayName": "Title Narrow",
+        "purpose": "Observed title narrow role."
+      },
+      "title-small": {
+        "displayName": "Title Small",
+        "purpose": "Observed title small role."
+      },
+      "component-title": {
+        "displayName": "Component Title",
+        "purpose": "Observed component title role."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Observed body role."
+      },
+      "conversation": {
+        "displayName": "Conversation",
+        "purpose": "White script reading, 50ch and 1.8 leading."
+      },
+      "conversation-narrow": {
+        "displayName": "Conversation Narrow",
+        "purpose": "Script reading below 900px, 1.85 leading."
+      },
+      "dialog-title": {
+        "displayName": "Dialog Title",
+        "purpose": "Observed dialog title role."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Observed label role."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Observed button role."
+      },
+      "field": {
+        "displayName": "Field",
+        "purpose": "Observed field role."
+      },
+      "field-narrow": {
+        "displayName": "Field Narrow",
+        "purpose": "Observed field narrow role."
+      },
+      "node-label": {
+        "displayName": "Node Label",
+        "purpose": "Observed node label role."
+      },
+      "badge": {
+        "displayName": "Badge",
+        "purpose": "Observed badge role."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "Intentional stronger brand weight."
+      },
+      "call-identity": {
+        "displayName": "Call Identity",
+        "purpose": "Intentional medium identity weight."
+      }
+    },
+    "shadows": [
+      {
+        "name": "dialog",
+        "value": "0 20px 64px rgb(18 14 32 / 0.16)",
+        "purpose": "Dialogs and fixed preview message."
+      }
+    ],
+    "motion": [
+      {
+        "name": "duration-state",
+        "value": "200ms",
+        "purpose": "Button background, color, and border transitions with CSS default ease."
+      },
+      {
+        "name": "primary-pressed",
+        "value": "translateY(1px)",
+        "purpose": "Primary pressed feedback."
+      },
+      {
+        "name": "spinner",
+        "value": "spin 850ms linear infinite",
+        "purpose": "Busy and saving indicators."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01ms",
+        "purpose": "Animation/transition duration under reduced motion, one animation iteration, no smooth scrolling."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-min",
+        "value": "1600px"
+      },
+      {
+        "name": "compact-max",
+        "value": "1150px"
+      },
+      {
+        "name": "call-single-column-max",
+        "value": "899px"
+      },
+      {
+        "name": "narrow-max",
+        "value": "599px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The implemented primary action treatment.",
+      "html": "<button type=\"button\" class=\"ds-button-primary\">Next</button>",
+      "css": ".ds-button-primary{font-family:var(--font-body);line-height:1.6;cursor:pointer;display: inline-flex; min-height: 44px; gap: 8px; align-items: center; justify-content: center; padding: 9px 14px; border-radius: var(--radius-control); border: 1px solid transparent; font-size: 14px; font-weight: 400; line-height: 1.5; white-space: nowrap; transition: background-color var(--duration-state), color var(--duration-state), border-color var(--duration-state);}.ds-button-primary{border-radius: var(--radius-action); border: 2px solid var(--color-accent); padding: 9px 20px; background: transparent; color: var(--color-accent);}.ds-button-primary:hover{color: var(--color-on-accent); background: var(--color-accent);}.ds-button-primary:focus-visible{outline:2px solid var(--color-accent);outline-offset:4px;}.ds-button-primary:active{color: var(--color-on-accent); background: var(--color-accent-hover); transform: translateY(1px);}.ds-button-primary:focus-visible{outline-color: var(--color-accent);}.ds-button-primary:disabled{background: var(--color-raised); color: var(--color-disabled); border-color: var(--color-line);}.ds-button-primary[aria-busy]{color: var(--color-muted);}@media(hover:none){.ds-button-primary{min-width:44px;min-height:44px;}}@media(prefers-reduced-motion:reduce){.ds-button-primary{transition-duration:0.01ms;}}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "The implemented secondary action treatment.",
+      "html": "<button type=\"button\" class=\"ds-button-secondary\">Go back</button>",
+      "css": ".ds-button-secondary{font-family:var(--font-body);line-height:1.6;cursor:pointer;display: inline-flex; min-height: 44px; gap: 8px; align-items: center; justify-content: center; padding: 9px 14px; border-radius: var(--radius-control); border: 1px solid transparent; font-size: 14px; font-weight: 400; line-height: 1.5; white-space: nowrap; transition: background-color var(--duration-state), color var(--duration-state), border-color var(--duration-state);}.ds-button-secondary{background: var(--color-surface); color: var(--color-ink); border-color: var(--color-control-line);}.ds-button-secondary:hover{background: var(--color-raised); border-color: var(--color-muted);}.ds-button-secondary:focus-visible{outline:2px solid var(--color-accent);outline-offset:4px;}.ds-button-secondary:disabled{background: var(--color-raised); color: var(--color-disabled); border-color: var(--color-line);}.ds-button-secondary[aria-busy]{color: var(--color-muted);}@media(hover:none){.ds-button-secondary{min-width:44px;min-height:44px;}}@media(prefers-reduced-motion:reduce){.ds-button-secondary{transition-duration:0.01ms;}}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "The implemented ghost action treatment.",
+      "html": "<div class=\"ds-preview-ground\"><button type=\"button\" class=\"ds-button-ghost\">Edit</button></div>",
+      "css": ".ds-button-ghost{font-family:var(--font-body);line-height:1.6;cursor:pointer;display: inline-flex; min-height: 44px; gap: 8px; align-items: center; justify-content: center; padding: 9px 14px; border-radius: var(--radius-control); border: 1px solid transparent; font-size: 14px; font-weight: 400; line-height: 1.5; white-space: nowrap; transition: background-color var(--duration-state), color var(--duration-state), border-color var(--duration-state);}.ds-button-ghost{background: transparent; color: var(--color-muted);}.ds-button-ghost:hover{background: var(--color-raised); color: var(--color-ink);}.ds-button-ghost:focus-visible{outline:2px solid var(--color-accent);outline-offset:4px;}.ds-button-ghost:disabled{background: var(--color-raised); color: var(--color-disabled); border-color: var(--color-line);}.ds-button-ghost[aria-busy]{color: var(--color-muted);}@media(hover:none){.ds-button-ghost{min-width:44px;min-height:44px;}}@media(prefers-reduced-motion:reduce){.ds-button-ghost{transition-duration:0.01ms;}}.ds-preview-ground{padding:16px;background:var(--color-page);color:var(--color-ink);}"
+    },
+    {
+      "name": "Danger Button",
+      "kind": "button",
+      "refersTo": "button-danger",
+      "description": "The implemented danger action treatment.",
+      "html": "<button type=\"button\" class=\"ds-button-danger\">End call</button>",
+      "css": ".ds-button-danger{font-family:var(--font-body);line-height:1.6;cursor:pointer;display: inline-flex; min-height: 44px; gap: 8px; align-items: center; justify-content: center; padding: 9px 14px; border-radius: var(--radius-control); border: 1px solid transparent; font-size: 14px; font-weight: 400; line-height: 1.5; white-space: nowrap; transition: background-color var(--duration-state), color var(--duration-state), border-color var(--duration-state);}.ds-button-danger{background: var(--color-surface); color: var(--color-error); border-color: var(--color-danger-line);}.ds-button-danger:hover{background: var(--color-error-bg); border-color: var(--color-error);}.ds-button-danger:focus-visible{outline:2px solid var(--color-accent);outline-offset:4px;}.ds-button-danger:disabled{background: var(--color-raised); color: var(--color-disabled); border-color: var(--color-line);}.ds-button-danger[aria-busy]{color: var(--color-muted);}@media(hover:none){.ds-button-danger{min-width:44px;min-height:44px;}}@media(prefers-reduced-motion:reduce){.ds-button-danger{transition-duration:0.01ms;}}"
+    },
+    {
+      "name": "Labeled Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Associated label, input, and supporting hint.",
+      "html": "<div class=\"ds-form-ground\"><div class=\"ds-field\"><label for=\"ds-lead-name\">Lead name</label><input id=\"ds-lead-name\" placeholder=\"e.g. Alex Morgan\" aria-describedby=\"ds-name-help\"><p id=\"ds-name-help\">Use the lead’s name.</p></div></div>",
+      "css": ".ds-field{font-family:var(--font-body);line-height:1.6;color:var(--color-ink);display: flex; flex-direction: column; gap: 7px; min-width: 0;}.ds-field label{font-size:14px;font-weight:400;}.ds-field input{font-family:var(--font-body);line-height:1.6;min-height:42px;caret-color:var(--color-accent);font: inherit;}.ds-field input::placeholder{color:var(--color-placeholder);opacity:1;}.ds-field input[aria-invalid=\"true\"]{border-color: var(--color-error);}.ds-field input:disabled{color: var(--color-muted); background: var(--color-raised);}.ds-field input:focus-visible{outline:2px solid var(--color-accent);outline-offset:4px;}.ds-field p{margin:0;font-size:13px;color:var(--color-muted);}@media(max-width:599px){.ds-field input{font-size:18px;}}@media(hover:none){.ds-field input{min-height:44px;}}.ds-form-ground{padding:24px;background:var(--color-raised);border-radius:var(--radius-panel);}"
+    },
+    {
+      "name": "Section Navigation",
+      "kind": "nav",
+      "refersTo": "nav-item-active",
+      "description": "Current section is distinct from quiet section links.",
+      "html": "<div class=\"ds-preview-ground\"><nav class=\"ds-nav\" aria-label=\"Library sections\"><a href=\"#conversation\" aria-current=\"location\">Conversation<svg width=\"13\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></a><a href=\"#editor\">Editor nodes</a></nav></div>",
+      "css": ".ds-nav{font-family:var(--font-body);line-height:1.6;display:flex;flex-direction:column;gap:4px;}.ds-nav a{display: flex; gap: 8px; align-items: center; justify-content: space-between; padding: 10px 12px; border-radius: 6px; text-decoration: none; color: var(--color-muted); font-size: 15px;}.ds-nav a:hover{background: var(--color-raised); color: var(--color-ink);}.ds-nav a[aria-current]{color: var(--color-accent); background: var(--color-selected); font-weight: 400;}.ds-nav a:focus-visible{outline:2px solid var(--color-accent);outline-offset:4px;}.ds-nav a svg{flex-shrink:0;}@media(max-width:899px){.ds-nav{flex-direction:row;overflow-x:auto;}.ds-nav a{white-space:nowrap;min-height:44px;padding:8px 12px;font-size:14px;}.ds-nav a svg{display:none;}}.ds-preview-ground{padding:16px;background:var(--color-page);color:var(--color-ink);}"
+    },
+    {
+      "name": "Status Badges",
+      "kind": "chip",
+      "refersTo": "badge-green",
+      "description": "Informational tags use neutral or semantic washes.",
+      "html": "<div class=\"ds-preview-ground\"><div class=\"ds-badges\"><span class=\"ds-badge\">Sample call</span><span class=\"ds-badge ds-badge-green\">Open</span><span class=\"ds-badge ds-badge-amber\">Unsaved</span><span class=\"ds-badge ds-badge-red\">Error</span></div></div>",
+      "css": ".ds-badges{display:flex;gap:8px;flex-wrap:wrap;}.ds-badge{font-family:var(--font-body);line-height:1.6;display: inline-flex; align-items: center; width: fit-content; font-size: 12px; font-weight: 400; padding: 3px 8px; border-radius: 4px; background: var(--color-raised); color: var(--color-muted); white-space: nowrap;}.ds-badge-green{color: var(--color-success); background: var(--color-success-bg);}.ds-badge-amber{color: var(--color-warning); background: var(--color-warning-bg);}.ds-badge-red{color: var(--color-error); background: var(--color-error-bg);}.ds-preview-ground{padding:16px;background:var(--color-page);color:var(--color-ink);}"
+    },
+    {
+      "name": "Conversation Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Paper conversation workspace with broad corners and preserved reading space.",
+      "html": "<section class=\"ds-panel\" aria-label=\"Sample conversation\"><div class=\"ds-panel-head\">Alex Morgan</div><div class=\"ds-panel-body\"><div class=\"ds-node-label\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 4h14v12H9l-4 4Z\"/></svg>Talking point</div><p>Hi Alex, thanks for making a little time today.</p></div></section>",
+      "css": ".ds-panel{font-family:var(--font-body);line-height:1.6;color:var(--color-ink);border: 1px solid var(--color-line); border-radius: var(--radius-panel); overflow: clip; background: var(--color-surface);}.ds-panel-head{min-height:78px;padding:18px 24px;display:flex;align-items:center;border-bottom:1px solid var(--color-line);font-size:15px;font-weight:500;}.ds-panel-body{padding: 40px;}.ds-node-label{display: flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 400; color: var(--color-muted);}.ds-panel-body p{margin:0;font-size: var(--font-size-conversation); line-height: 1.8; font-weight: 400; letter-spacing: 0; margin-top: 20px; max-width: 50ch; white-space: pre-wrap; overflow-wrap: anywhere;}@media(max-width:1150px){.ds-panel-body{padding:32px;}}@media(max-width:899px){.ds-panel-body p{font-size:1.25rem;line-height:1.85;}}@media(max-width:599px){.ds-panel{border-radius:24px;}.ds-panel-head{padding:14px 16px;min-height:74px;}.ds-panel-body{padding:32px 24px;}}"
+    },
+    {
+      "name": "Selected Branch",
+      "kind": "custom",
+      "refersTo": "branch-option-selected",
+      "description": "A selected full-width response with text, check, and pressed state.",
+      "html": "<button type=\"button\" class=\"ds-branch\" aria-pressed=\"true\"><span>Yes, it’s a challenge</span><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 12 4 4L19 6\"/></svg></button>",
+      "css": ".ds-branch{font-family:var(--font-body);line-height:1.6;cursor:pointer;width: 100%; min-height: 56px; padding: 14px 18px; text-align: left; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid var(--color-control-line); border-radius: var(--radius-control); background: var(--color-surface); color: var(--color-ink); font-size: 15px;}.ds-branch:hover{border-color: var(--color-accent); background: var(--color-raised);}.ds-branch[aria-pressed=\"true\"]{background: var(--color-selected); border-color: var(--color-accent); color: var(--color-accent);}.ds-branch:focus-visible{outline:2px solid var(--color-accent);outline-offset:4px;}.ds-branch span{overflow-wrap:anywhere;}.ds-branch svg{flex-shrink:0;}"
+    },
+    {
+      "name": "Editor Node",
+      "kind": "card",
+      "refersTo": "editor-node",
+      "description": "White editor node on the cobalt specimen field; green perimeter focus, blue child Edit focus.",
+      "html": "<div class=\"ds-editor-field\"><article class=\"ds-editor\" tabindex=\"0\" aria-label=\"Talking point editor node\"><div class=\"ds-editor-heading\"><span class=\"ds-editor-label\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 4h14v12H9l-4 4Z\"/></svg>Talking point</span></div><p>Introduce the call and ask about the current process.</p><div class=\"ds-editor-footer\"><button type=\"button\" class=\"ds-editor-edit\">Edit</button><span class=\"ds-port\" aria-hidden=\"true\"></span></div></article></div>",
+      "css": ".ds-editor{font-family:var(--font-body);line-height:1.6;color:var(--color-ink);border: 1px solid var(--color-control-line); border-radius: 12px; background: var(--color-surface); min-height: 174px; overflow: clip;}.ds-editor-heading{display: flex; justify-content: space-between; align-items: center; gap: 6px; padding: 16px 16px 10px;}.ds-editor-label{display: flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 400; color: var(--color-muted);}.ds-editor>p{margin:0;font-size: 14px; padding: 0 16px 16px; white-space: pre-wrap; overflow-wrap: anywhere;}.ds-editor-footer{padding: 5px 8px; border-top: 1px solid var(--color-line); display: flex; align-items: center; justify-content: space-between; min-height: 42px;}.ds-editor-edit{font-family:var(--font-body);line-height:1.6;cursor:pointer;display: inline-flex; min-height: 44px; gap: 8px; align-items: center; justify-content: center; padding: 9px 14px; border-radius: var(--radius-control); border: 1px solid transparent; font-size: 14px; font-weight: 400; line-height: 1.5; white-space: nowrap; transition: background-color var(--duration-state), color var(--duration-state), border-color var(--duration-state);background: transparent; color: var(--color-muted);font-size: 12px; min-height: 30px; padding: 4px 8px;}.ds-editor-edit:hover{background: var(--color-raised); color: var(--color-ink);}.ds-editor-edit:focus-visible{outline:2px solid var(--color-accent);outline-offset:4px;}.ds-editor:focus-visible,.ds-editor.ds-editor-selected{outline:2px solid var(--color-green);outline-offset:3px;}.ds-port{height: 8px; width: 8px; flex-shrink: 0; border: 1px solid var(--color-muted); background: var(--color-surface); border-radius: 50%;}.ds-port{margin-right:8px;}.ds-editor-label svg{flex-shrink:0;}.ds-editor-field{padding:32px;background:var(--color-accent);border-radius:var(--radius-panel);}@media(max-width:599px){.ds-editor-field{border-radius:24px;}.ds-editor>p{font-size:15px;}.ds-editor-edit{min-height:40px;font-size:13px;}}@media(hover:none){.ds-editor-edit{min-width:44px;min-height:44px;}}@media(prefers-reduced-motion:reduce){.ds-editor-edit{transition-duration:0.01ms;}}"
+    },
+    {
+      "name": "Outlined Heading Word",
+      "kind": "custom",
+      "refersTo": "heading-word",
+      "description": "Regular title with thin current-color capsule emphasis.",
+      "html": "<h2 class=\"ds-heading\">Editor <span class=\"ds-word-outline\">nodes</span></h2>",
+      "css": ".ds-heading{font-family:var(--font-body);line-height:1.6;color:var(--color-ink);margin:0;font-size: 32px; font-weight: 400; letter-spacing: -0.025em; line-height: 1.3;}.ds-word-outline{display: inline-block; border: 1px solid currentColor; border-radius: 0.3em; padding: 0.02em 0.2em 0.07em; font-weight: inherit; line-height: 1.15;}@media(max-width:599px){.ds-heading{font-size:26px;}}"
+    },
+    {
+      "name": "Review Footer",
+      "kind": "nav",
+      "refersTo": "review-footer",
+      "description": "Ink field with green outlined Back to top action.",
+      "html": "<footer class=\"ds-footer\"><span>Call Coach</span><p>Full application screens follow your feedback.</p><a href=\"#main\">Back to top</a></footer>",
+      "css": ".ds-footer{font-family:var(--font-body);line-height:1.6;display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; border: 0; border-radius: var(--radius-panel) var(--radius-panel) 0 0; background: var(--color-ink); color: var(--color-page); padding: 32px;}.ds-footer p{margin:0;font-size:12px;}.ds-footer>a{font-size:12px;color: var(--color-green); border: 1px solid currentColor; border-radius: 16px; padding: 8px 14px; text-decoration: none;}.ds-footer>a:hover{background: var(--color-green); color: var(--color-on-green);}.ds-footer>a:focus-visible{outline:2px solid var(--color-accent);outline-offset:4px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Paper, color, and regular type",
+    "overview": "The user's replacement Atuin reference governs this library: paper surfaces, violet-black ink, cobalt blue, bright green, mist panels, and large regular-weight headings. Thin outlines enclose selected heading words and primary actions. Broad color fields carry the graphic identity while conversation reading stays white, spacious, and quiet. This replaces the earlier inaccurate dark interpretation.\n\nCall Coach uses locally hosted Manrope as the explicit substitute for the reference's licensed Px Grotesk, whose files were not supplied. It adapts the reference's typography and geometry to an operating component library, without importing the studio homepage's copy, artwork, navigation, or functions. The artifact still demonstrates synthetic, page-local behavior; full application screens and backend workflows remain behind user feedback.",
+    "keyCharacteristics": [
+      "Paper reading surfaces and violet-black ink with cobalt action outlines.",
+      "Regular Manrope headings with selected words enclosed by thin capsules.",
+      "Broad blue editor field, mist forms, and an ink footer with green actions.",
+      "Large panel corners, smaller white editor nodes, and shaped outline buttons.",
+      "Preserved 22px/20px conversation reading, open leading, and independent notes."
+    ],
+    "rules": [
+      {
+        "name": "The Contextual Contrast Rule",
+        "body": "Use blue on paper, paper on blue, and green for editor perimeter focus or selection against blue; keep child Edit focus blue on its white node.",
+        "section": "colors"
+      },
+      {
+        "name": "The Reading Space Rule",
+        "body": "Preserve the larger conversation scale, open leading, short measure, and additional reading padding.",
+        "section": "typography"
+      },
+      {
+        "name": "The Color Field Rule",
+        "body": "Keep conversation reading white, form specimens mist, editor specimens blue with white nodes, and the footer ink with green links.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use the current paper, ink, blue, green, mist, and muted palette.",
+      "Do preserve regular heading weights and the intentional semantic weights of brand and identity text.",
+      "Do keep editor perimeter focus and selection green on blue, with child Edit focus blue on white.",
+      "Do preserve conversation wrapping, independent notes, and reachable End call controls.",
+      "Do retain labeled fields, textual errors, visible focus, touch alternatives, reduced motion, and sample labels."
+    ],
+    "donts": [
+      "Don't restore the superseded dark palette or lime pill primary action.",
+      "Don't claim the substituted Manrope font is Px Grotesk.",
+      "Don't place decorative artwork behind conversation or form content.",
+      "Don't import the reference studio's homepage copy, navigation, artwork, or functions.",
+      "Don't imply page-local preview interactions are saved to a server."
+    ]
+  }
+}

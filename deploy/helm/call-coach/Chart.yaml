@@ -1,0 +1,6 @@
+apiVersion: v2
+name: call-coach
+description: Call Coach web, Go API, migration initialization, and persistent PostgreSQL.
+type: application
+version: 1.0.0
+appVersion: "1.0.0"

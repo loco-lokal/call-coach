@@ -1,0 +1,13 @@
+.git
+.agents
+.impeccable
+.next
+node_modules
+test-results
+playwright-report
+*.tsbuildinfo
+.env*
+docs
+deploy
+Intent.md
+spec.md

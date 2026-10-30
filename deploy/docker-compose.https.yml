@@ -1,0 +1,21 @@
+# Apply from the repository root alongside docker-compose.yml.
+services:
+  web:
+    ports: !reset []
+  caddy:
+    image: caddy:2.11.7-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      APP_HOST: ${APP_HOST:?Set APP_HOST to your public DNS name}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      web: {condition: service_healthy}
+    restart: unless-stopped
+volumes:
+  caddy-data:
+  caddy-config:

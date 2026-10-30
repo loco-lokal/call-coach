@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "call-coach.name" . }}
+  labels:
+    {{- include "call-coach.labels" . | nindent 4 }}
+spec:
+  type: ClusterIP
+  selector:
+    {{- include "call-coach.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: web
+  ports:
+    - name: http
+      port: {{ .Values.service.port }}
+      targetPort: http

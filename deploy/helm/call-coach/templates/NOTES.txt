@@ -1,0 +1,6 @@
+Call Coach is deployed with web, API migrations, and {{ if .Values.postgresql.enabled }}persistent PostgreSQL{{ else }}an externally configured database{{ end }}.
+
+Pre-create Secret {{ .Values.existingSecret }} as described in docs/deployment.md.
+Public origin: {{ .Values.publicAppUrl }}. Cookies require HTTPS when cookieSecure=true.
+The API and database have only internal Services. Public traffic belongs on the web Service.
+PVCs and backups are operator-owned and must be retained across upgrades.
