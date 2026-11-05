@@ -78,13 +78,29 @@ test("in-page navigation reaches each section", async ({ page }) => {
 
 test("does not promise unsupported capabilities", async ({ page }) => {
   await page.goto("/");
-  const included = page.locator(".scope__column").first();
-  await expect(included).not.toContainText(
-    /Aufzeichnung|Transkription|CRM|Analyse/,
-  );
-  await expect(page.locator(".scope__column--out")).toContainText(
-    "Keine Gesprächsaufzeichnung",
-  );
+  const unsupported =
+    /\b(Aufzeichnung|Transkription|Telefonie|CRM|Suche|Dashboards?|Analyse|Einzelkonten)\b/;
+  const columns = page.locator(".scope__column");
+  await expect(columns).toHaveCount(2);
+  await expect(columns.nth(0).getByRole("heading")).toHaveText("Enthalten");
+  await expect(columns.nth(0)).not.toContainText(unsupported);
+  const excluded = columns.nth(1);
+  await expect(excluded.getByRole("heading")).toHaveText("Nicht enthalten");
+  for (const item of [
+    "Keine Gesprächsaufzeichnung und keine Transkription",
+    "Keine Telefonie und keine CRM-Anbindung",
+    "Keine Suche in der Leitfadenbibliothek",
+    "Keine Auswertungs-Dashboards",
+    "Keine Einzelkonten",
+  ])
+    await expect(excluded).toContainText(item);
+  // Outside the "Nicht enthalten" list, the page never mentions these capabilities.
+  const elsewhere = await page.evaluate(() => {
+    const main = document.querySelector("main")!.cloneNode(true) as HTMLElement;
+    main.querySelector(".scope__column--out")!.remove();
+    return main.textContent || "";
+  });
+  expect(elsewhere).not.toMatch(unsupported);
   await expect(page.locator("form")).toHaveCount(0);
 });
 
@@ -127,10 +143,26 @@ test("unknown paths return the German 404 page", async ({ page }) => {
 });
 
 test("sends security headers", async ({ request }) => {
-  const response = await request.get("/");
-  const headers = response.headers();
-  expect(headers["content-security-policy"]).toContain("default-src 'none'");
-  expect(headers["x-content-type-options"]).toBe("nosniff");
+  for (const path of ["/", "/impressum", "/styles.css", "/gibt-es-nicht"]) {
+    const headers = (await request.get(path)).headers();
+    expect(headers["content-security-policy"]).toBe(
+      "default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+    );
+    expect(headers["x-content-type-options"]).toBe("nosniff");
+    expect(headers["referrer-policy"]).toBe("strict-origin-when-cross-origin");
+    expect(headers["permissions-policy"]).toBe(
+      "camera=(), microphone=(), geolocation=()",
+    );
+  }
+});
+
+test("directories return 404 instead of listings or redirects", async ({
+  request,
+}) => {
+  for (const path of ["/assets", "/assets/", "/fonts/", "/scripts/"]) {
+    const response = await request.get(path, { maxRedirects: 0 });
+    expect(response.status(), path).toBe(404);
+  }
 });
 
 test("keyboard users can skip to the content and reach the main action", async ({

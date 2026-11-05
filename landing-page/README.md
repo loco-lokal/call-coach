@@ -20,7 +20,9 @@ Design tokens follow [DESIGN.md](../DESIGN.md) and `src/styles/tokens.css` of th
 
 ## Application link
 
-Every "Call Coach öffnen" link uses the placeholder `__CALL_COACH_APP_URL__`, which is replaced at response time with `CALL_COACH_APP_URL` (default `http://127.0.0.1:3000`, the local Compose address). Set it to the public origin of your Call Coach deployment. The page links only to the existing application login; there is no signup, demo, pricing or contact workflow.
+Every "Call Coach öffnen" link uses the placeholder `__CALL_COACH_APP_URL__`, which is replaced at response time with `CALL_COACH_APP_URL`. The page links only to the existing application login; there is no signup, demo, pricing or contact workflow.
+
+The production image has **no default**. At startup, `nginx/05-validate-app-url.sh` refuses to start the container unless `CALL_COACH_APP_URL` is an HTTPS origin, such as `https://calls.example.com` or `https://calls.example.com:8443/`. Paths, queries, credentials and unusual characters are rejected, so the value cannot break the nginx configuration. Plain `http://` is accepted only for `localhost` and `127.0.0.1`. The local Node server defaults to `http://127.0.0.1:3000` (the local Compose address) for development only.
 
 ## Develop, check and test
 
@@ -51,14 +53,14 @@ docker run --rm -p 127.0.0.1:8080:8080 \
   call-coach-landing:local
 ```
 
-The image builds and checks the site with Node, then serves `dist/` with `nginxinc/nginx-unprivileged` as a non-root user on port 8080. `/healthz` returns `ok` and backs the image health check. Responses carry a strict Content-Security-Policy (no scripts), `nosniff`, a referrer policy and a permissions policy. Terminate HTTPS in front of the container, as for the application.
+The image builds and checks the site with Node, then serves `dist/` with `nginxinc/nginx-unprivileged` as a non-root user on port 8080. Without a valid `CALL_COACH_APP_URL` the container exits with an error instead of serving wrong links. Only files and clean page URLs are served; directories return the 404 page. `/healthz` returns `ok` and backs the image health check. Responses carry a strict Content-Security-Policy (no scripts), `nosniff`, a referrer policy and a permissions policy. Terminate HTTPS in front of the container, as for the application.
 
-Test the running container in all five browser projects with the official Playwright image:
+To verify the production image end to end, run:
 
 ```sh
-docker run --rm --network host --ipc host -v "$PWD/landing-page:/work" -w /work \
-  -e BASE_URL=http://127.0.0.1:8080 -e CALL_COACH_APP_URL=https://calls.example.com/ \
-  mcr.microsoft.com/playwright:v1.64.1-noble npx playwright test
+cd landing-page && npm ci && npm run verify:container
 ```
+
+`scripts/verify-container.sh` builds the image and checks that it refuses missing or invalid application URLs. It then starts the image hardened on port 8080 and runs the Playwright suite against it in all five browser projects, using `mcr.microsoft.com/playwright:v1.64.1-noble`, so no local browsers are needed. It is intended to be the CI entry point for this project.
 
 This project is not part of the application's Docker Compose or Helm setup.

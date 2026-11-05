@@ -8,7 +8,9 @@ COPY src ./src
 RUN node scripts/lint.mjs && node scripts/build.mjs
 
 FROM nginxinc/nginx-unprivileged:1.30.6-alpine-slim AS runtime
-ENV CALL_COACH_APP_URL=http://127.0.0.1:3000
+# CALL_COACH_APP_URL has no default: the container refuses to start without a valid
+# application origin (see nginx/05-validate-app-url.sh).
+COPY --chmod=755 nginx/05-validate-app-url.sh /docker-entrypoint.d/05-validate-app-url.sh
 COPY nginx/default.conf.template /etc/nginx/templates/default.conf.template
 COPY --from=build /site/dist /usr/share/nginx/html
 EXPOSE 8080
