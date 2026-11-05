@@ -58,5 +58,6 @@ For backend checks, run `go test ./...` in `backend/`; set `TEST_DATABASE_URL` t
 - [OpenAPI 3.1 contract](backend/contract/openapi.json)
 - [Implementation status and verification](docs/implementation-status.md)
 - [Approved design system](DESIGN.md)
+- [Public landing page](landing-page/README.md) — separate static site with its own Dockerfile.
 
 Production deployments require HTTPS and matching `PUBLIC_APP_URL`/secure cookies. API and database services stay private. Credentials are deployment configuration and are never public frontend environment variables.

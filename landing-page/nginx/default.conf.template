@@ -1,0 +1,47 @@
+# Rendered by the nginx image entrypoint (envsubst) into /etc/nginx/conf.d/default.conf.
+# CALL_COACH_APP_URL is the public origin of the Call Coach application; it is
+# validated by /docker-entrypoint.d/05-validate-app-url.sh before this is rendered.
+server {
+    listen 8080;
+    server_name _;
+    root /usr/share/nginx/html;
+    server_tokens off;
+    charset utf-8;
+
+    gzip on;
+    gzip_types text/css image/svg+xml;
+
+    add_header Content-Security-Policy "default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header Permissions-Policy "camera=(), microphone=(), geolocation=()" always;
+
+    # The HTML refers to the application through a placeholder so one image works for
+    # every deployment.
+    sub_filter_once off;
+    sub_filter "__CALL_COACH_APP_URL__" "${CALL_COACH_APP_URL}";
+
+    error_page 404 /404.html;
+
+    location = /healthz {
+        access_log off;
+        default_type text/plain;
+        return 200 "ok";
+    }
+
+    location = / {
+        try_files /index.html =404;
+        expires 5m;
+    }
+
+    # Files and clean page URLs only; directories are never listed or redirected.
+    location / {
+        try_files $uri $uri.html =404;
+        expires 5m;
+    }
+
+    location ~ ^/(fonts|assets)/ {
+        try_files $uri =404;
+        expires 30d;
+    }
+}
