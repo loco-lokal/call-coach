@@ -1,0 +1,26 @@
+{
+  "name": "call-coach-landing-page",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Public marketing landing page for Call Coach, operated by Loco Lokal eGbR.",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs --source",
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/serve.mjs",
+    "lint": "node scripts/lint.mjs && prettier --check .",
+    "format": "prettier --write .",
+    "test": "playwright test",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource-variable/manrope": "5.3.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.11.1",
+    "@playwright/test": "1.64.1",
+    "@types/node": "^24.10.0",
+    "prettier": "3.9.10",
+    "typescript": "^5.9.3"
+  }
+}
